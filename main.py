@@ -40,12 +40,10 @@ if __name__ == "__main__":
     """
     td_list = ['甲子', '丙子', '戊子', '庚子', '壬子', '乙丑', '丁丑', '己丑', '辛丑', '癸丑', '甲寅', '丙寅', '戊寅', '庚寅', '壬寅', '乙卯', '丁卯', '己卯', '辛卯', '癸卯', '甲辰', '丙辰', '戊辰', '庚辰', '壬辰', '乙巳', '丁巳', '己巳', '辛巳', '癸巳', '甲午', '丙午', '戊午', '庚午', '壬午', '乙未', '丁未', '己未', '辛未', '癸未', '甲申', '丙申', '戊申', '庚申', '壬申', '乙酉', '丁酉', '己酉', '辛酉', '癸酉', '甲戌', '丙戌', '戊戌', '庚戌', '壬戌', '乙亥', '丁亥', '己亥', '辛亥', '癸亥']
 
-    td_len = len(td_list)
-
     base_td = BaseCommon(td_list, 2)
 
     encoded = base_td.common_encode('hello')
-    print(encoded)
+    print('encoded: {}'.format(encoded))
 
     decoded = base_td.common_decode(encoded)
-    print(decoded)
+    print('decoded: {}'.format(decoded))
