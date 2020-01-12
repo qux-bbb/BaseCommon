@@ -7,11 +7,13 @@ class BaseCommon:
     common_list = []
     common_len = None  # 列表长度
     item_len = None  # 列表中一项的长度
+    re_str = None
 
     def __init__(self, common_list, item_len=1):
         self.common_list = common_list
         self.common_len = len(common_list)
         self.item_len = item_len
+        self.re_str = r'.{%d}' % self.item_len
 
     def common_encode(self, raw_str):
         final_str = ''
@@ -25,7 +27,7 @@ class BaseCommon:
     def common_decode(self, encoded_str):
         if len(encoded_str) % self.item_len != 0:
             raise ValueError
-        encoded_str_list = re.findall(r'.{2}', encoded_str)
+        encoded_str_list = re.findall(self.re_str, encoded_str)
         encoded_str_list_len = len(encoded_str_list)
         big_num = 0
         for i in range(0, encoded_str_list_len):
