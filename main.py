@@ -26,7 +26,7 @@ class BaseCommon:
 
     def common_decode(self, encoded_str):
         if len(encoded_str) % self.item_len != 0:
-            raise ValueError
+            raise ValueError('Unexpected length of encoded_str')
         encoded_str_list = re.findall(self.re_str, encoded_str)
         encoded_str_list_len = len(encoded_str_list)
         big_num = 0
